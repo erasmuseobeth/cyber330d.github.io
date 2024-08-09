@@ -51,7 +51,7 @@
     select:focus,
     input[type="file"]:focus,
     input[type="range"]:focus {
-      border-color: #007bff; /* Matches the submit button color */
+      border-color: #007bff; 
       outline: none;
     }
     input[type="submit"] {
@@ -94,6 +94,46 @@
     }
     .radio-group input[type="radio"] {
       margin-right: 10px;
+    }
+        /* Style links */
+    .link-container {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .link-container a {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 16px;
+      margin: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .link-container a.blue {
+      background-color: #007bff; 
+      color: #fff;
+    }
+    .link-container a.blue:hover {
+      background-color:  #007bff; /* Slightly darker shade for hover effect */
+    }
+    .link-container a.default {
+      background-color: #fff;
+      color: #008822; 
+      border: 2px solid  #007bff; /* Green border */
+    }
+    .link-container a.default:hover {
+      background-color:  #007bff; 
+      color: #fff;
+    }
+    /* Style the footer */
+    footer {
+      margin-top: 50px;
+      padding: 10px;
+      background-color: #007bff; 
+      color: #fff;
+      text-align: center;
+      width: 100%;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -162,5 +202,10 @@
     <input type="range" id="volume-slider" name="volume" min="0" max="50" />
     <input type="submit" value="Submit" />
   </form>
+  
+  <!-- Footer -->
+  <footer>
+    Developed by cyber330d u17co1017 COEN 512 Assignment
+  </footer>
 </body>
 </html>
