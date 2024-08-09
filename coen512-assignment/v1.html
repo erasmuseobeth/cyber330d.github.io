@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COEN 512 Web Programming Practicals u17co1017</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    h2 {
+      color: #333;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 30px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    select,
+    input[type="file"],
+    input[type="range"] {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+      transition: border-color 0.3s;
+    }
+    input[type="text"]:focus,
+    select:focus,
+    input[type="file"]:focus,
+    input[type="range"]:focus {
+      border-color: #008822; /* Updated to the new color */
+      outline: none;
+    }
+    input[type="submit"] {
+      background-color: #008822; /* Updated to the new color */
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+    input[type="submit"]:hover {
+      background-color: #006d19; /* Slightly darker shade for hover effect */
+    }
+    /* Style the file input */
+    input[type="file"] {
+      border: 1px solid #ddd;
+      background-color: #fff;
+      padding: 8px;
+      cursor: pointer;
+      display: block;
+    }
+    input[type="file"]::-webkit-file-upload-button {
+      background-color: #008822; /* Updated to the new color */
+      color: #fff;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    input[type="file"]::-webkit-file-upload-button:hover {
+      background-color: #006d19; /* Slightly darker shade for hover effect */
+    }
+    /* Style the slider */
+    input[type="range"] {
+      -webkit-appearance: none;
+      background-color: #e0e0e0;
+      height: 8px;
+      border-radius: 4px;
+      outline: none;
+      margin-top: 10px;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      background-color: #008822; /* Green color for the slider thumb */
+      border: 2px solid #006d19; /* Darker border for the thumb */
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+    input[type="range"]::-moz-range-thumb {
+      background-color: #008822; /* Green color for the slider thumb */
+      border: 2px solid #006d19; /* Darker border for the thumb */
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+    /* Style the select dropdown */
+    select {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 4px;
+      color: #333;
+      transition: border-color 0.3s;
+    }
+    select:hover,
+    select:focus {
+      border-color: #008822; /* Updated to the new color */
+    }
+    /* Style the radio buttons */
+    input[type="radio"] {
+      accent-color: #008822; /* Updated to the new color */
+    }
+    .radio-group {
+      margin-bottom: 20px;
+    }
+    .radio-group input[type="radio"] {
+      margin-right: 10px;
+    }
+    /* Style links */
+    .link-container {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .link-container a {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 16px;
+      margin: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .link-container a.blue {
+      background-color: #008822; 
+      color: #fff;
+    }
+    .link-container a.blue:hover {
+      background-color: #006d19; /* Slightly darker shade for hover effect */
+    }
+    .link-container a.default {
+      background-color: #fff;
+      color: #008822; 
+      border: 2px solid #008822; /* Green border */
+    }
+    .link-container a.default:hover {
+      background-color: #008822; 
+      color: #fff;
+    }
+    /* Style the footer */
+    footer {
+      margin-top: 50px;
+      padding: 10px;
+      background-color: #008822; 
+      color: #fff;
+      text-align: center;
+      width: 100%;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Links -->
+  <div class="link-container">
+    <a href="./v2" class="blue">Blue Style</a>
+    <a href="./" class="default">Unstyled</a>
+  </div>
+  <!-- Part i: Student Information -->
+  <h2>Student Information (Reg No)</h2>
+  <form action="#" method="post">
+    <label for="first-name">First name:</label>
+    <input type="text" id="first-name" name="first-name" />
+    
+    <label for="last-name">Last name:</label>
+    <input type="text" id="last-name" name="last-name" />
+    
+    <label for="other-names">Other names:</label>
+    <input type="text" id="other-names" name="other-names" />
+    
+    <input type="submit" value="Submit" />
+  </form>
+
+  <!-- Part ii: Department Selection -->
+  <h2>DEPARTMENT</h2>
+  <form action="#" method="post">
+    <label for="department">Choose your department:</label>
+    <select id="department" name="department">
+      <option value="computer" selected>COMPUTER</option>
+      <option value="electrical">ELECTRICAL</option>
+      <option value="mechanical">MECHANICAL</option>
+    </select>
+    <input type="submit" value="Submit" />
+  </form>
+
+  <!-- Part iii: Favorite Subject Selection -->
+  <h2>Choose your favorite subject:</h2>
+  <form action="#" method="post">
+    <div class="radio-group">
+      <input type="radio" id="physics" name="favorite-subject" value="physics" />
+      <label for="physics">PHYSICS</label>
+    </div>
+    <div class="radio-group">
+      <input type="radio" id="chemistry" name="favorite-subject" value="chemistry" />
+      <label for="chemistry">CHEMISTRY</label>
+    </div>
+    <div class="radio-group">
+      <input type="radio" id="mathematics" name="favorite-subject" value="mathematics" />
+      <label for="mathematics">MATHEMATICS</label>
+    </div>
+    <input type="submit" value="Submit" />
+  </form>
+
+  <!-- Part iv: File Upload -->
+  <h2>Select a file:</h2>
+  <form action="#" method="post" enctype="multipart/form-data">
+    <label for="file-upload">Select a file:</label>
+    <input type="file" id="file-upload" name="file-upload" />
+    <input type="submit" value="Submit" />
+  </form>
+
+  <!-- Part v: Volume Control -->
+  <h2>Volume (between 0 and 50):</h2>
+  <form action="#" method="post">
+    <label for="volume-slider">Volume (between 0 and 50):</label>
+    <input type="range" id="volume-slider" name="volume" min="0" max="50" />
+    <input type="submit" value="Submit" />
+  </form>
+
+
+  <!-- Footer -->
+  <footer>
+    Developed by cyber330d u17co1017 COEN 512 Assignment
+  </footer>
+</body>
+</html>
